@@ -1,7 +1,7 @@
 <?php
 /*
-  Plugin Name: slushMoney
-  Description: Add slushMoney Visitors Registration for article payments, Payable Links  insertion, Donations
+  Plugin Name: Slushmoney
+  Description: Works with slushmoney.net for paywall functions and donations.
   Author: Farhat Aziz
   Version: 1.0
  */
@@ -116,7 +116,7 @@ class SM_Setting {
         if (!isset($_POST['sm_form']) || !wp_verify_nonce($_POST['sm_form'], 'sm_update')) {
             ?>
             <div class="error">
-                <p>Sorry, your data provided was not correct. Please try again.</p>
+                <p>Sorry, the data provided was not correct. Please try again.</p>
             </div> <?php
             exit;
         } else {
@@ -128,7 +128,7 @@ class SM_Setting {
             update_option('sm_currency', $sm_currency);
             ?>
             <div class="updated">
-                <p>Site settings has been saved</p>
+                <p>Site settings have been saved</p>
             </div>
             <?php
         }
@@ -165,13 +165,13 @@ class SM_Setting {
                     <tbody>
 
                         <tr>
-                            <th><label for="sm_block_warning_msg">Warning Message for Block</label></th>
+                            <th><label for="sm_block_warning_msg">Warning Message - Article limit near</label></th>
                             <td>
                                 <textarea name="sm_block_warning_msg" id="sm_block_warning_msg" style="width:100%; resize:vertical;min-height: 100px;" /><?php echo stripslashes(esc_html(get_option('sm_block_warning_msg'))); ?></textarea>
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="sm_block_msg">Message for Block</label></th>
+                            <th><label for="sm_block_msg">Message - Article Limit reached</label></th>
                             <td>
                                 <textarea name="sm_block_msg" id="sm_block_msg" style="width:100%; resize:vertical;min-height: 100px;" /><?php echo stripslashes(esc_html(get_option('sm_block_msg'))); ?></textarea>
                             </td>
@@ -179,7 +179,7 @@ class SM_Setting {
 
                         <tr>
                             <th>
-                                <label for="sm_not_logged_in_msg">User not Logged in Message</label></th>
+                                <label for="sm_not_logged_in_msg">Message - User not Logged in</label></th>
                             <td>
                                 <textarea name="sm_not_logged_in_msg" id="sm_not_logged_in_msg" style="width:100%; resize:vertical;min-height: 100px;" /><?php echo stripslashes(esc_html(get_option('sm_not_logged_in_msg'))); ?></textarea>
 
@@ -208,7 +208,7 @@ class SM_Setting {
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="sm_not_registered_msg">User Not Registered at Slushmoney</label></th>
+                            <th><label for="sm_not_registered_msg">Message - User is not registered at Slushmoney</label></th>
                             <td>
                                 <textarea name="sm_not_registered_msg" id="sm_not_registered_msg" style="width:100%; resize:vertical;min-height: 100px;" /><?php
                                 if (!empty(get_option('sm_not_registered_msg')))
@@ -216,7 +216,7 @@ class SM_Setting {
                                 ?></textarea></td>
                         </tr>
                         <tr>
-                            <th><label for="sm_in_archive_msg">User in Slushmoney Archive</label></th>
+                            <th><label for="sm_in_archive_msg">Message - Site is innactive at Slushmoney</label></th>
                             <td>
                                 <textarea name="sm_in_archive_msg" id="sm_in_archive_msg" style="width:100%; resize:vertical;min-height: 100px;" /><?php
                                 if (!empty(get_option('sm_in_archive_msg')))
@@ -385,13 +385,15 @@ class SM_Setting {
                 <table class="form-table">
                     <tbody>
                         <tr>
-                            <th style="width:320px;"><label>Continue with Slushmoney button shortcode</label></th>
+                            <th style="width:320px;"><label>Continue with Slushmoney button shortcode:</label></th>
                             <td>[sm_continue]</td>
                         </tr>
                         <tr>
                             <th colspan="2"><label>Parameters</label><br/> 1- text : Display text on button, default is "Continue"<br/>
-                                2- msg_text : Message shown if user is not logged in   </th>
-                        </tr>
+                                2- msg_text : Message shown if user is not logged in  <br><br>
+								(  Example : [sm_continue text="Continue"]  ) </th><br>
+								
+							                          </tr>
                         <tr>
                             <th><label>Donation shortcode</label></th>
                             <td>[sm_receive_donation]</td>
