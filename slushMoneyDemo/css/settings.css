@@ -1,0 +1,71 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 16, 2020, 1:54:52 PM
+    Author     : farhat
+*/
+.form1-table th{
+    
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: top;
+}
+.form-table th{
+    
+    width: 240px;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #3bdcf4;
+  color:#fff;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+/* Style the as inside the tab */
+.tab a {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 15px;
+    text-decoration: none;
+}
+
+/* Change background color of as on hover */
+.tab a:hover {
+  background-color: #3c43cf;
+    color: #fff;
+}
+
+/* Create an active/current tablink class */
+.tab a.active {
+  background-color: #3c43cf;
+    color: #fff;
+}
+
+/* Style the tab content */
+.tabcontent {
+/*  display: none;*/
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-right: 20px;
+}
+
+.wp-core-ui .button-primary {
+    background: #3c43cf;
+    border-color: #2271b1;
+}
+div.updated {
+    border-left-color: #3c43cf;
+    margin-left: 0;
+}
